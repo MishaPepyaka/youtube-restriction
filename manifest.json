@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Intentional YouTube",
+  "description": "Removes Shorts, obscures thumbnails, and limits recommendations to subscribed channels.",
+  "version": "0.1.0",
+  "permissions": ["storage"],
+  "host_permissions": ["https://www.youtube.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "css": ["styles.css"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}

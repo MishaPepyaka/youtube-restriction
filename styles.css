@@ -1,0 +1,50 @@
+/* Make thumbnail text and imagery useless as attention hooks. */
+ytd-thumbnail img,
+yt-thumbnail-view-model img,
+a.yt-lockup-view-model__content-image img,
+ytd-playlist-thumbnail img,
+ytd-rich-grid-media img {
+  filter: blur(24px) brightness(0.72) !important;
+  transform: scale(1.12) !important;
+}
+
+/* Hide Shorts immediately, before the content script finishes scanning. */
+ytd-rich-shelf-renderer[is-shorts],
+ytd-reel-shelf-renderer,
+ytd-mini-guide-entry-renderer:has(a[href^="/shorts"]),
+ytd-guide-entry-renderer:has(a[href^="/shorts"]),
+yt-tab-shape[tab-title="Shorts"],
+a[href^="/shorts/"] {
+  display: none !important;
+}
+
+[data-intentional-youtube-hidden="true"] {
+  display: none !important;
+}
+
+/* Keep rejected Home cards in the layout. Removing them with display:none makes
+   YouTube's infinite grid continually fetch more items to fill the viewport. */
+ytd-browse[page-subtype="home"] [data-intentional-youtube-filtered="true"] {
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* The watch-page sidebar does not use viewport-filling grid pagination. */
+ytd-watch-next-secondary-results-renderer [data-intentional-youtube-filtered="true"] {
+  display: none !important;
+}
+
+/* Remove engagement prompts and social feedback. */
+ytd-subscribe-button-renderer,
+yt-subscribe-button-view-model,
+#subscribe-button,
+#segmented-like-button,
+#segmented-dislike-button,
+ytd-segmented-like-dislike-button-renderer,
+segmented-like-dislike-button-view-model,
+like-button-view-model,
+dislike-button-view-model,
+ytd-comments,
+#comments {
+  display: none !important;
+}
