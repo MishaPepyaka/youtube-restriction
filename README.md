@@ -7,6 +7,9 @@ A small Chromium extension that makes YouTube less attention-hungry.
 - Removes Shorts shelves, links, cards, and redirects direct Shorts pages.
 - Redirects the YouTube Home page to the Subscriptions feed.
 - Hides Subscribe, Like, Dislike, and comments UI.
+- Hides the notification button in the top navigation.
+- Removes the recommendation sidebar on watch pages and expands the video
+  column into the available space.
 - Automatically likes each watched video after three seconds without toggling
   videos that are already liked.
 - Heavily blurs thumbnails so they cannot function as clickbait.

@@ -29,9 +29,23 @@ ytd-browse[page-subtype="home"] [data-intentional-youtube-filtered="true"] {
   pointer-events: none !important;
 }
 
-/* The watch-page sidebar does not use viewport-filling grid pagination. */
-ytd-watch-next-secondary-results-renderer [data-intentional-youtube-filtered="true"] {
+/* Remove the watch-page recommendation sidebar and give its width to the video. */
+ytd-watch-flexy #secondary,
+ytd-watch-flexy #secondary-inner,
+ytd-watch-next-secondary-results-renderer {
   display: none !important;
+}
+
+ytd-watch-flexy #columns,
+ytd-watch-flexy #primary,
+ytd-watch-flexy #primary-inner {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+ytd-watch-flexy #primary {
+  margin-left: 0 !important;
+  padding-right: var(--ytd-margin-6x, 24px) !important;
 }
 
 /* Remove engagement prompts and social feedback. */
@@ -46,5 +60,11 @@ like-button-view-model,
 dislike-button-view-model,
 ytd-comments,
 #comments {
+  display: none !important;
+}
+
+/* Hide the notification bell in the top navigation. */
+ytd-notification-topbar-button-renderer,
+yt-notification-topbar-button-renderer {
   display: none !important;
 }
