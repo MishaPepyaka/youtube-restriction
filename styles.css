@@ -48,10 +48,14 @@ ytd-watch-flexy #primary {
   padding-right: var(--ytd-margin-6x, 24px) !important;
 }
 
-/* Remove engagement prompts and social feedback. */
-ytd-subscribe-button-renderer,
-yt-subscribe-button-view-model,
-#subscribe-button,
+/* Keep Subscribe/Unsubscribe available on channel pages. */
+html:not([data-intentional-youtube-channel-page]) ytd-subscribe-button-renderer,
+html:not([data-intentional-youtube-channel-page]) yt-subscribe-button-view-model,
+html:not([data-intentional-youtube-channel-page]) #subscribe-button {
+  display: none !important;
+}
+
+/* Remove social feedback. */
 #segmented-like-button,
 #segmented-dislike-button,
 ytd-segmented-like-dislike-button-renderer,

@@ -289,6 +289,17 @@
     if (isHomePage || isShortsPage) location.replace("/feed/subscriptions");
   }
 
+  function updatePageContext() {
+    const isChannelPage = /^\/(?:@[^/]+|channel\/[^/]+|c\/[^/]+|user\/[^/]+)/i
+      .test(location.pathname);
+
+    document.documentElement?.toggleAttribute(
+      "data-intentional-youtube-channel-page",
+      isChannelPage
+    );
+  }
+
+  updatePageContext();
   redirectRestrictedPage();
 
   const observer = new MutationObserver(scheduleScan);
@@ -298,6 +309,7 @@
       return;
     }
 
+    updatePageContext();
     observer.observe(document.documentElement, {
       childList: true,
       subtree: true
@@ -307,6 +319,7 @@
 
   startObserving();
   window.addEventListener("yt-navigate-finish", () => {
+    updatePageContext();
     redirectRestrictedPage();
     scheduleScan();
     scheduleAutoLike();
