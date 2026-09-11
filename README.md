@@ -6,8 +6,9 @@ A small Chromium extension that makes YouTube less attention-hungry.
 
 - Removes Shorts shelves, links, cards, and redirects direct Shorts pages.
 - Redirects the YouTube Home page to the Subscriptions feed.
-- Hides Subscribe outside channel pages, and hides Like, Dislike, and comments
-  UI. Channel pages keep their Subscribe/Unsubscribe button available.
+- Keeps the Subscribe/Unsubscribe button available on channel pages while
+  hiding subscription prompts everywhere else.
+- Hides Like, Dislike, and comments UI.
 - Hides the notification button in the top navigation.
 - Removes the recommendation sidebar on watch pages and expands the video
   column into the available space.
